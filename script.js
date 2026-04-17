@@ -6,7 +6,7 @@ const noButtonTexts = [
     "Absolutely sure?",
     "Sure ba?",
     "Pinaka sure najud na?",
-    "Positive?",
+    "Sure nana??",
     "Double sure?",
     "Sure na?",
     "Sure na, sure na jud?",
