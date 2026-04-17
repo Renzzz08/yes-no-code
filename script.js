@@ -9,7 +9,7 @@ const noButtonTexts = [
     "Positive?",
     "Double sure?",
     "Last chance!",
-    "Reconsidering?",
+    "Sure na sure na jud?",
     "Still no? 😢"
 ];
 
