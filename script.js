@@ -4,13 +4,13 @@ const noButtonTexts = [
     "You sure?",
     "Really sure?",
     "Absolutely sure?",
-    "Think again!",
-    "Are you certain?",
+    "Sure ba?",
+    "Pinaka sure najud na?",
     "Positive?",
     "Double sure?",
     "Last chance!",
     "Sure na sure na jud?",
-    "Still no? 😢"
+    "Sure a??? 😢"
 ];
 
 const questionTexts = [
