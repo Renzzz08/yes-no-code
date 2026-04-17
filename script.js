@@ -1,6 +1,5 @@
 // script.js
 
-// Array of texts to cycle through when "No" is clicked
 const noButtonTexts = [
     "You sure?",
     "Really sure?",
@@ -14,9 +13,21 @@ const noButtonTexts = [
     "Still no? 😢"
 ];
 
+const questionTexts = [
+    "Will you be my Valentine? 🩷",
+    "Are you absolutely sure? 🥺",
+    "But... but... 😿",
+    "Please reconsider! 💝",
+    "I'll be really sad! 😭",
+    "Pretty please? 🙏",
+    "I made you cookies! 🍪",
+    "I'll cry forever... 😢",
+    "Last chance, I promise! 💕",
+    "Okay fine... just kidding, please say yes! 🥹"
+];
+
 let noClickCount = 0;
 
-// Function to handle button click events
 function selectOption(option) {
     if (option === 'yes') {
         flashRainbowColors(function() {
@@ -24,43 +35,81 @@ function selectOption(option) {
             displayCatHeart();
         });
     } else if (option === 'no') {
-        // Cycle through the texts array
-        noClickCount++;
         const textIndex = Math.min(noClickCount, noButtonTexts.length - 1);
+
+        // Change No button text
         document.getElementById('no-button').innerText = noButtonTexts[textIndex];
 
-        // Increase font size of "Yes" button
+        // Change question text
+        document.getElementById('question').innerText = questionTexts[Math.min(noClickCount + 1, questionTexts.length - 1)];
+
+        // Grow the Yes button
         var yesButton = document.getElementById('yes-button');
         var currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
-        var newSize = parseFloat(currentFontSize) * 2;
+        var newSize = parseFloat(currentFontSize) * 1.4; // grow by 1.4x each click (less aggressive than 2x)
         yesButton.style.fontSize = newSize + 'px';
 
-        // Move "No" button to a random location on screen
+        // Move No button to a random location
         moveButtonToRandomPosition();
+
+        noClickCount++;
     } else {
         alert('Invalid option!');
     }
 }
 
-// Function to move the "No" button to a random position
 function moveButtonToRandomPosition() {
     var noButton = document.getElementById('no-button');
 
-    // Get button dimensions
     var btnWidth = noButton.offsetWidth;
     var btnHeight = noButton.offsetHeight;
 
-    // Calculate safe boundaries so button stays within viewport
     var maxX = window.innerWidth - btnWidth - 20;
     var maxY = window.innerHeight - btnHeight - 20;
 
-    // Generate random X and Y within safe boundaries
     var randomX = Math.floor(Math.random() * maxX);
     var randomY = Math.floor(Math.random() * maxY);
 
-    // Apply fixed positioning so it can move freely across the page
     noButton.style.position = 'fixed';
     noButton.style.left = randomX + 'px';
     noButton.style.top = randomY + 'px';
-    noButton.style.margin = '0'; // Remove any margin that could offset it
+    noButton.style.margin = '0';
 }
+
+function flashRainbowColors(callback) {
+    var colors = ['#ff0000', '#ff7f00', '#ffff00', '#00ff00', '#0000ff', '#4b0082', '#9400d3'];
+    var i = 0;
+    var interval = setInterval(function() {
+        document.body.style.backgroundColor = colors[i];
+        i = (i + 1) % colors.length;
+    }, 200);
+    setTimeout(function() {
+        clearInterval(interval);
+        document.body.style.backgroundColor = '';
+        if (callback) callback();
+    }, 2000);
+}
+
+function displayCat() {
+    var imageContainer = document.getElementById('image-container');
+    var catImage = new Image();
+    catImage.src = 'cat.gif';
+    catImage.alt = 'Cat';
+    catImage.onload = function() {
+        imageContainer.appendChild(catImage);
+    };
+}
+
+function displayCatHeart() {
+    document.getElementById('image-container').innerHTML = '';
+    var imageContainer = document.getElementById('image-container');
+    var catHeartImage = new Image();
+    catHeartImage.src = 'cat-heart.gif';
+    catHeartImage.alt = 'Cat Heart';
+    catHeartImage.onload = function() {
+        imageContainer.appendChild(catHeartImage);
+        document.getElementById('options').style.display = 'none';
+    };
+}
+
+displayCat();
