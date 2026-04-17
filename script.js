@@ -10,7 +10,7 @@ const noButtonTexts = [
     "Double sure?",
     "Last chance!",
     "Sure na sure na jud?",
-    "Sure a??? 😢"
+    "Sure nana??? 😢"
 ];
 
 const questionTexts = [
