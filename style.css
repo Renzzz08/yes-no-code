@@ -38,3 +38,56 @@ button {
     border: none; /* Remove button border */
     cursor: pointer; /* Set cursor to pointer on hover */
 }
+
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    background-color: #FADADD;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#image-container {
+    /* This container will hold the images */
+}
+
+#question {
+    font-family: 'Sacramento', cursive;
+    font-size: 52px;
+}
+
+#options {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 26px;
+    font-family: 'Sacramento', cursive;
+    background-color: #FB607F;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;                  /* Soft rounded corners */
+    transition: transform 0.15s ease;    /* Subtle pop on hover */
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Keeps the No button visually consistent after it gets fixed positioning */
+#no-button {
+    z-index: 999;                        /* Always on top when floating */
+    white-space: nowrap;                 /* Prevents text from wrapping when it moves */
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.15); /* Soft shadow so it stands out anywhere */
+}
