@@ -17,13 +17,13 @@ const questionTexts = [
     "Will you be my Valentine? 🩷",
     "Are you absolutely sure? 🥺",
     "But... but... 😿",
-    "Please reconsider! 💝",
-    "I'll be really sad! 😭",
+    "Please reconsider! Sure najud? 💝",
+    "I'll be really sad! as in dli najud? 😭",
     "Pretty please? 🙏",
-    "I made you cookies! 🍪",
-    "I'll cry forever... 😢",
-    "Last chance, I promise! 💕",
-    "Okay fine... just kidding, please say yes! 🥹"
+    "Dli jud?",
+    "iyak ko ron... 😢 (aw charan)",
+    "Last question, I promise! 💕",
+    "Bitaw ... jokevra bitaw tong last, please say yes! 🥹"
 ];
 
 let noClickCount = 0;
