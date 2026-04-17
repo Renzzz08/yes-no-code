@@ -17,18 +17,7 @@ function selectOption(option) {
         var currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
         var newSize = parseFloat(currentFontSize) * 2; // Increase font size by  * 2px
         yesButton.style.fontSize = newSize + 'px';
-    } else if {
-        else if (option === 'no') {
-        // Change text on the "No" button to "You sure?"
-        document.getElementById('no-button').innerText = 'sure?'; 
-        // Increase font size of "Yes" button
-        var yesButton = document.getElementById('yes-button');
-        var currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
-        var newSize = parseFloat(currentFontSize) * 2; // Increase font size by  * 2px
-        yesButton.style.fontSize = newSize + 'px';
-    } 
-    
-    else {
+    } else {
         // If neither "Yes" nor "No" was clicked, show an alert message
         alert('Invalid option!');
     }
